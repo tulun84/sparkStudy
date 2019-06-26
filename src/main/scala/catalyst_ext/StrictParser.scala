@@ -9,9 +9,9 @@ import org.apache.spark.sql.types.{DataType, StructType}
 import org.apache.spark.sql.{SparkSession, SparkSessionExtensions}
 
 /**
-  * @Author: junping.chi@luckincoffee.com
   * @Date: 2019/6/26 14:45
-  * @Description:
+  * @Description: 自定义Parser
+  *               (Parser SQL成Unresove Logincal Plan阶段，进行自定义校验，本例中：只要出现"select *"行为，就会抛出异常。)
   */
 case class StrictParser(parser: ParserInterface) extends ParserInterface {
 
